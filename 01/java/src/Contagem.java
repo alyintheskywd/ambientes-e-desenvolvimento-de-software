@@ -19,7 +19,7 @@ public class Contagem {
             }
             i= i + 1;
         }
-        System.out.println("Números que são inteiros: "+contInt);
-        System.out.println("Números que não são inteiros: "+contFloat);
+        System.out.println("Números inteiros: "+contInt);
+        System.out.println("Números não inteiros: "+contFloat);
     }
 }
