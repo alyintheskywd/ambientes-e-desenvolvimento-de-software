@@ -1,21 +1,15 @@
-import java.util.Scanner;
-
 public class Mdc {
-    public void calcularMdc(){
-        int c, d, resto;
-        Scanner input = new Scanner(System.in);
-        System.out.println("Digite o primeiro valor:");
-        c = input.nextInt();
-        System.out.println("Digite o segundo valor:");
-        d = input.nextInt();
-
-        while (d != 0){
-            resto = c%d;
-            c = d;
-            d = resto;
-
+    public static void main(String[] args) {
+        int a = 24;
+        int b = 36;
+        int mdc = 1;
+        
+        for (int i = 1; i <= a && i <= b; i++) {
+            if (a % i == 0 && b % i == 0) {
+                mdc = i;
+            }
         }
-        System.out.println("O máximo divisor comum é: " + c);
-
+        
+        System.out.println("O máximo divisor comum de " + a + " e " + b + " é " + mdc);
     }
 }

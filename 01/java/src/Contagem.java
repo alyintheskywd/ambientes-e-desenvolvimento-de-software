@@ -1,25 +1,28 @@
 import java.util.Scanner;
 
 public class Contagem {
-    public void contagem(){
-        Scanner input = new Scanner(System.in);
-        int numero, contInt=0, contFloat = 0, i = 0, aux;
-        float valor;
-        System.out.println("Quantos elementos?");
-        numero= input.nextInt();
-        while (i<numero){
-            valor= input.nextFloat();
-            aux = (int) valor;
-            if (aux==valor){
-                contInt= contInt+1;
-
-            }else {
-                contFloat = contFloat +1;
-
-            }
-            i= i + 1;
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Digite o valor de N: ");
+        int n = scanner.nextInt();
+        
+        int[] numeros = new int[n];
+        for (int i = 0; i < n; i++) {
+            System.out.print("Digite o " + (i+1) + "º número: ");
+            numeros[i] = scanner.nextInt();
         }
-        System.out.println("Números inteiros: "+contInt);
-        System.out.println("Números não inteiros: "+contFloat);
+        
+        System.out.print("Digite o valor do primeiro dado: ");
+        int primeiroDado = scanner.nextInt();
+        
+        int contador = 0;
+        for (int numero : numeros) {
+            if (numero >= primeiroDado && numero <= n) {
+                contador++;
+            }
+        }
+        
+        System.out.println("Existem " + contador + " valores inteiros entre o primeiro dado (" + primeiroDado + ") e N (" + n + ").");
     }
 }

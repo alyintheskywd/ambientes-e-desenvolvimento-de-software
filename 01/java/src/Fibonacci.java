@@ -1,23 +1,16 @@
-import java.util.Scanner;
-
 public class Fibonacci {
-    public void sequence(){
-        int numero, n =0, d =1 , i =2;
-        Scanner input = new Scanner(System.in);
-        System.out.println("Quantos termos?");
-        numero = input.nextInt();
-        while (i<numero){
-            System.out.println(n + " , " + d + " , ");
-            n = n +d;
-            d = n +d;
-            i = i+2;
-
-
-        }
-        if(i == numero){
-            System.out.println(n+" , " + d);
-        }else {
-            System.out.println(n);
+    public static void main(String[] args) {
+        int n = 8; // Quantidade de termos desejada
+        int a = 0;
+        int b = 1;
+        
+        System.out.print("0, 1");
+        
+        for (int i = 2; i < n; i++) {
+            int c = a + b;
+            System.out.print(", " + c);
+            a = b;
+            b = c;
         }
     }
 }
