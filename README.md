@@ -1,1 +1,1 @@
-Entregáveis da disciplina "Ambientes e desenvolvimento de software" do 2º semestre de Análise e Desenvolvimento de Sistemas da UNIFOR.
+Entregáveis da disciplina "Ambientes e Desenvolvimento de Software" do 2º semestre de Análise e Desenvolvimento de Sistemas da UNIFOR.
