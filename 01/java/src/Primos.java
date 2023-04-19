@@ -1,19 +1,22 @@
+import java.util.Scanner;
+
 public class Primos {
-    public static void main(String[] args) {
-        int n = 17;
-        boolean primo = true;
-        
-        for (int i = 2; i <= n/2; i++) {
-            if (n % i == 0) {
-                primo = false;
-                break;
+    public static void executar() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Digite um número: ");
+        int num = scan.nextInt();
+        for (int i = 2; i <= num; i++) {
+            boolean primo = true;
+            for (int j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    primo = false;
+                    System.out.println(i + " não é número primo.");
+                }
             }
-        }
-        
-        if (primo) {
-            System.out.println(n + " é um número primo");
-        } else {
-            System.out.println(n + " não é um número primo");
+            if (primo) {
+                System.out.println(i + " é número primo.");
+            }
         }
     }
 }
+

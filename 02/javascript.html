@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Entregável 02: JavaScript</title>
+    <style>
+      body {
+        background-color: #363635;
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .question {
+        width: 400px;
+        border-radius: 12px;
+        padding: 20px;
+        background-color: #414140;
+        border: 1px solid #20201f;
+        box-shadow: 0 1px 1px #171716;
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        color: #81e979;
+      }
+
+      form {
+        margin-bottom: 10px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input {
+        padding: 5px;
+        border-radius: 3px;
+        border: none;
+        background-color: #ffffff;
+        color: #363635;
+        margin-bottom: 10px;
+      }
+
+      button {
+        background-color: #81e979;
+        color: #363635;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-top: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Entregável 02</h1>
+    <h2>Ao digitar os valores, clicar no botão para ver o resultado</h2>
+    <div class="question">
+      <h2>Contagem</h2>
+      <form>
+        <label for="count-number">Insira um número:</label>
+        <input type="number" id="count-number" />
+        <button type="button" onclick="executarContagem()">Contar</button>
+        <p id="result1"></p>
+      </form>
+    </div>
+
+    <div class="question">
+      <h2>Fibonacci</h2>
+      <form>
+        <label for="fib-number">Insira um número:</label>
+        <input type="number" id="fib-number" />
+        <button type="button" onclick="executarFibonacci()">Calcular</button>
+        <p id="result2"></p>
+      </form>
+    </div>
+
+    <div class="question">
+      <h2>MDC</h2>
+      <form>
+        <label for="mdc-number1">Insira o primeiro número:</label>
+        <input type="number" id="mdc-number1" />
+        <label for="mdc-number2">Insira o segundo número:</label>
+        <input type="number" id="mdc-number2" />
+        <button type="button" onclick="executarMDC()">Calcular</button>
+        <p id="result3"></p>
+      </form>
+    </div>
+
+    <div class="question">
+      <h2>Primos</h2>
+      <form>
+        <label for="primo-number">Insira um número:</label>
+        <input type="number" id="primo-number" />
+        <button type="button" onclick="executarPrimos()">Checar</button>
+        <p id="result4"></p>
+      </form>
+    </div>
+
+    <div class="question">
+      <h2>Quicksort</h2>
+      <form>
+        <label for="quick-number"
+          >Insira uma lista de números separados por vírgula (sem
+          espaço):</label
+        >
+        <input type="text" id="quick-lista" />
+        <button type="button" onclick="executarQuicksort()">Ordenar</button>
+        <p id="result5"></p>
+      </form>
+    </div>
+
+    <div class="question">
+      <h2>Somatório</h2>
+      <form>
+        <label for="som-number"
+          >Insira uma lista de números separados por vírgula (sem
+          espaço):</label
+        >
+        <input type="text" id="som-lista" />
+        <button type="button" onclick="executarSomatorio()">Somar</button>
+        <p id="result6"></p>
+      </form>
+    </div>
+
+    <script>
+      function executarContagem() {
+        const number = parseInt(document.getElementById("count-number").value);
+        let count = "";
+        for (let i = 1; i <= number; i++) {
+          count += i + " ";
+        }
+        document.getElementById("result1").textContent = count;
+      }
+
+      function executarFibonacci() {
+        const number = parseInt(document.getElementById("fib-number").value);
+        let fibonacciSequence = "";
+        let a = 0,
+          b = 1,
+          c = 1;
+        for (let i = 0; i < number; i++) {
+          fibonacciSequence += c + " ";
+          c = a + b;
+          a = b;
+          b = c;
+        }
+        document.getElementById("result2").textContent = fibonacciSequence;
+      }
+
+      function executarMDC() {
+        var n1 = parseInt(document.getElementById("mdc-number1").value);
+        var n2 = parseInt(document.getElementById("mdc-number2").value);
+        if (isNaN(n1) || isNaN(n2) || n1 <= 0 || n2 <= 0) {
+          alert("Insira dois números inteiros positivos.");
+          return;
+        }
+        var menorN = n1 < n2 ? n1 : n2;
+        var mdc = 1;
+        for (var i = 1; i <= menorN; i++) {
+          if (n1 % i == 0 && n2 % i == 0) {
+            mdc = i;
+          }
+        }
+        document.getElementById("result3").innerHTML =
+          "O MDC de " + n1 + " e " + n2 + " é " + mdc + ".";
+      }
+
+      function executarPrimos() {
+        var n = parseInt(document.getElementById("primo-number").value);
+        if (isNaN(n) || n <= 1) {
+          alert("Insira um número inteiro positivo maior que 1.");
+          return;
+        }
+        var primo = true;
+        for (var i = 2; i <= Math.sqrt(n); i++) {
+          if (n % i == 0) {
+            primo = false;
+            break;
+          }
+        }
+        if (primo) {
+          document.getElementById("result4").innerHTML =
+            n + " é um número primo.";
+        } else
+          document.getElementById("result4").innerHTML =
+            n + " não é um número primo.";
+      }
+
+      function executarQuicksort() {
+        var lista = document.getElementById("quick-lista").value.split(",");
+        lista = lista.map(function (n) {
+          return parseInt(n);
+        });
+        if (lista.length < 2) {
+          alert("Insira pelo menos 2 números na lista.");
+          return;
+        }
+        quicksort(lista, 0, lista.length - 1);
+        document.getElementById("result5").innerHTML =
+          "Lista ordenada: " + lista.join(", ");
+      }
+
+      function quicksort(lista, primeiro, ultimo) {
+        if (primeiro < ultimo) {
+          var pivo = particionar(lista, primeiro, ultimo);
+          quicksort(lista, primeiro, pivo - 1);
+          quicksort(lista, pivo + 1, ultimo);
+        }
+      }
+
+      function particionar(lista, primeiro, ultimo) {
+        var pivo = lista[ultimo];
+        var i = primeiro - 1;
+        for (var j = primeiro; j < ultimo; j++) {
+          if (lista[j] < pivo) {
+            i++;
+            var temp = lista[i];
+            lista[i] = lista[j];
+            lista[j] = temp;
+          }
+        }
+        var temp = lista[i + 1];
+        lista[i + 1] = lista[ultimo];
+        lista[ultimo] = temp;
+        return i + 1;
+      }
+
+      function executarSomatorio() {
+        var lista = document.getElementById("som-lista").value.split(",");
+        lista = lista.map(function (n) {
+          return parseFloat(n);
+        });
+
+        if (lista.length < 1) {
+          alert("Insira pelo menos 1 número na lista.");
+          return;
+        }
+
+        var soma = 0;
+
+        for (var i = 0; i < lista.length; i++) {
+          soma += lista[i];
+        }
+
+        document.getElementById("result6").innerHTML = "Soma da lista: " + soma;
+      }
+    </script>
+  </body>
+</html>
