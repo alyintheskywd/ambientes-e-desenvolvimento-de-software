@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+
+    <title>Frontend Mentor | Results summary component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="card">
+      <section class="result">
+        <h1 class="title">Your Result</h1>
+        <div class="value"><span class="main">76</span> <span>of 100</span></div>
+
+        <h1 class="text">Great</h1>
+        <p class="description">You scored higher than 65% of the people who have taken these tests.</p>
+      </section>
+
+      <section class="summary">
+        <h1 class="title">Summary</h1>
+
+        <ul>
+          <li class="reaction">
+            <p class="text"><img src="assets/images/icon-reaction.svg" /><span>Reaction</span></p>
+            <p class="value"><span class="main">80</span> / 100</p>
+          </li>
+          <li class="memory">
+            <p class="text"><img src="assets/images/icon-memory.svg" /><span>Memory</span></p>
+            <p class="value"><span class="main">92</span> / 100</p>
+          </li>
+          <li class="verbal">
+            <p class="text"><img src="assets/images/icon-verbal.svg" /><span>Verbal</span></p>
+            <p class="value"><span class="main">61</span> / 100</p>
+          </li>
+          <li class="visual">
+            <p class="text"><img src="assets/images/icon-visual.svg" /><span>Visual</span></p>
+            <p class="value"><span class="main">72</span> / 100</p>
+          </li>
+        </ul>
+
+        <button class="continue">Continue</button>
+      </section>
+    </div>
+
+    <!-- <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by
+      <a href="#">Alicia</a>.
+    </div> -->
+  </body>
+</html>
